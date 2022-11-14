@@ -3,7 +3,7 @@ body{
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     background-color: rgb(241, 242, 243);
 }
@@ -13,13 +13,15 @@ div{
 }
 
 .header{
-    height: auto;
-
+    /* height: auto; */
+    width: 80%;
+    text-align: center;
 }
 
 .calculator-window{
     height: 10vh;
     width: 80%;
+    max-width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,21 +31,45 @@ div{
 .main-window{
     display: flex;
     flex-wrap: wrap;
-    /* flex: auto; */
     align-items: center;
     justify-content: center;
     align-content: center;
     height: 60%;
     width: 80%;
+    max-width: 350px;
     column-gap: 10px;
     row-gap: 25px;
 }
 
+#numbers-here{
+
+  height: 70%;
+  width: 90%;
+  max-width: 350px;
+  border: 1px solid rgba(26, 25, 25, 0.11);
+  font-size: 25px;
+  line-height: 25px;
+  background-color: #3c404300;
+}
+
 button{
-    flex: 1 0 21%;
-    /* width: 3vw; */
-    height: 20% ;
-    border-radius: 50%;
+  flex: 1 0 18%;
+  text-align: center;
+  font-size: 25px;
+  line-height: 25px;
+  height: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  background-color: #fff;
+  color: #3c4043;
+  max-height: 18%;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+
+}
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
 }
 
 
@@ -57,7 +83,7 @@ button{
 
 
 /* CSS from Website */
-.button-17 {
+/* .button-17 {
   align-items: center;
   appearance: none;
   background-color: #fff;
@@ -88,15 +114,9 @@ button{
   z-index: 0;
 }
 
-.button-17:hover {
-  background: #F6F9FE;
-  color: #174ea6;
-}
 
-.button-17:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-  outline: none;
-}
+
+
 
 .button-17:focus {
   outline: none;
@@ -121,4 +141,4 @@ button{
 
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
+} */
