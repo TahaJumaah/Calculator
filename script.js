@@ -1,6 +1,8 @@
-let firstOperand = 0;
-let secondOperand = 0;
-let total = 0;
+let totalObject = {
+     firstOperand: '',
+     secondOperand: '',
+     total: 0,
+};
 
 
 // Buttons Assignment
@@ -30,7 +32,10 @@ let allButtons = document.getElementsByClassName('button-17');
 
 for (let index = 0; index < allButtons.length; index++) {
     const element = allButtons[index];
-    element.addEventListener('pointerdown',( addtoScreen => calculatorWindow.value = calculatorWindow.value + element.innerHTML) )
+    element.addEventListener('pointerdown',(  addtoScreen => 
+        calculatorWindow.value = calculatorWindow.value + element.innerHTML
+        
+        ) )
 }
 
 // Clear Window Event Listener and Function
@@ -38,21 +43,50 @@ let calculatorWindow = document.getElementById('numbers-here')
 
 clear.addEventListener('pointerdown', clearScreen);
 
-function clearScreen() {calculatorWindow.value = ''
+function clearScreen() {calculatorWindow.value = '';
     
 }
 
 
 // EventListeners and Funcitons for Operators
 
-add.addEventListener('pointerdown' , function additionFunction() {
-    if (calculatorWindow.value === '') {
-        return ''
-        
-    } else { 
-        firstOperand = calculatorWindow.value;
+equal.addEventListener('pointerdown', equalFunction());
+
+function equalFunction() {
+
+    if (totalObject.secondOperand !== '') {
+        calculatorWindow.value = totalObject.total;
         
     }
+    
+}
 
-    console.log(total);
+
+
+add.addEventListener('pointerdown' , function additionFunction() {
+    if (calculatorWindow.value === '') {
+        console.log('empty')
+    }
+    if (totalObject.firstOperand !== '' && totalObject.secondOperand !== '') {
+        
+        totalObject.total = totalObject.firstOperand + totalObject.secondOperand;
+        clearScreen();
+    }
+    
+    if (totalObject.secondOperand !== '') {
+        totalObject.secondOperand = Number(calculatorWindow.value)
+        clearScreen();
+
+    }
+    if (totalObject.firstOperand == '') {
+        totalObject.firstOperand = Number(calculatorWindow.value);
+        clearScreen();
+
+    }
+
+    
+    console.log(totalObject.firstOperand);
+    console.log(totalObject.secondOperand);
+    console.log(totalObject.total)
 })
+

@@ -21,7 +21,7 @@ div{
 .calculator-window{
     height: 10vh;
     width: 80%;
-    max-width: 350px;
+    max-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ div{
     align-content: center;
     height: 60%;
     width: 80%;
-    max-width: 350px;
+    max-width: 300px;
     column-gap: 10px;
     row-gap: 25px;
 }
@@ -45,7 +45,7 @@ div{
 
   height: 70%;
   width: 90%;
-  max-width: 350px;
+  max-width: 300px;
   border: 1px solid rgba(26, 25, 25, 0.11);
   font-size: 25px;
   line-height: 25px;
