@@ -1,16 +1,14 @@
 body{
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     background-color: rgb(241, 242, 243);
+    overflow: hidden;
 }
 
-div{
-    border: 1px solid blue;
-}
 
 .header{
     /* height: auto; */
@@ -19,6 +17,7 @@ div{
 }
 
 .calculator-window{
+  margin-top: 10vh;
     height: 10vh;
     width: 80%;
     max-width: 300px;
@@ -39,17 +38,21 @@ div{
     max-width: 300px;
     column-gap: 10px;
     row-gap: 25px;
+    /* border: 3px solid rgba(12, 10, 10, 0.288); */
+
 }
 
 #numbers-here{
 
-  height: 70%;
-  width: 90%;
-  max-width: 300px;
-  border: 1px solid rgba(26, 25, 25, 0.11);
+  height: 90%;
+  width: 100%;
+  max-width: auto;
+  border: 3px solid rgba(12, 10, 10, 0.747);
+  border-radius: 0px;
   font-size: 25px;
   line-height: 25px;
   background-color: #3c404300;
+
 }
 
 button{
@@ -72,73 +75,18 @@ button{
   outline: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* CSS from Website */
-/* .button-17 {
-  align-items: center;
-  appearance: none;
-  background-color: #fff;
-  border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-  box-sizing:border-box;
-  color: #3c4043;
-  cursor: pointer;
-  display: inline-flex;
-  fill: currentcolor;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: 1.5em;
-  font-weight: 500;
-  justify-content: center;
-  letter-spacing: .25px;
-  line-height: 25px;
-  max-width: 100%;
-  overflow: visible;
-  padding: 2px 24px;
-  position: relative;
+footer{
+  /* position: fixed; */
+  display: flex;
+  bottom: 5vh;
+  width: 100%;
   text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  will-change: transform,opacity;
-  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  /* background-color: red; */
 }
 
-
-
-
-
-.button-17:focus {
-  outline: none;
-  border: 2px solid #4285f4;
+a {
+  text-decoration: none;
 }
-
-.button-17:not(:disabled) {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):hover {
-  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
-}
-
-.button-17:not(:disabled):focus {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):active {
-  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
-}
-
-.button-17:disabled {
-  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-} */
