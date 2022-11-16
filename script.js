@@ -2,13 +2,9 @@ let totalObject = {
      firstOperand: '',
      secondOperand: '',
      operator: '',
-     total: 0,
+     total: '',
 };
 
-let firstOperand = totalObject.firstOperand;
-let secondOperand = totalObject.secondOperand;
-let operator = totalObject.operator;
-let total = totalObject.total;
 
 // Buttons Assignment
 let one = document.getElementById('1');
@@ -48,9 +44,22 @@ for (let index = 0; index < allButtons.length; index++) {
 // Clear Window Event Listener and Function
 let calculatorWindow = document.getElementById('numbers-here')
 
-clear.addEventListener('pointerdown', clearScreen);
+clear.addEventListener('pointerdown', clearAll);
 
-function clearScreen() {calculatorWindow.value = '';
+function clearAll() {
+    calculatorWindow.value = '';
+    totalObject.firstOperand = '';
+    totalObject.secondOperand = '';
+    totalObject.total = '';
+    totalObject.operator = '';
+    console.table(totalObject);
+
+}
+
+function clearScreen() {
+    calculatorWindow.value = '';
+
+    
 }
 
 
@@ -59,51 +68,198 @@ function clearScreen() {calculatorWindow.value = '';
 equal.addEventListener('pointerdown', equalFunction);
 
 function equalFunction() {
-    if (totalObject.secondOperand === '' && totalObject.firstOperand !== '') {
-        totalObject.secondOperand = Number(calculatorWindow.value);
-        clearScreen();
-    }
-    if (totalObject.operator === 'plus') {
+    if (totalObject.operator == 'plus') {
+        if (totalObject.secondOperand == '') {
+            totalObject.secondOperand = Number(calculatorWindow.value);
+        }
         totalObject.total = totalObject.firstOperand + totalObject.secondOperand;
         calculatorWindow.value = totalObject.total;
-
+        totalObject.operator = '';
+        totalObject.firstOperand = '';
+        totalObject.secondOperand = '';
+        console.table(totalObject);
     }
-    console.table(totalObject);
 
+    // Subtraction Code
     
+    if (totalObject.operator == 'subtract') {
+        if (totalObject.secondOperand == '') {
+            totalObject.secondOperand = Number(calculatorWindow.value);
+        }
+
+    totalObject.total = totalObject.firstOperand- totalObject.secondOperand;
+    calculatorWindow.value = totalObject.total;
+    totalObject.operator = '';
+    totalObject.firstOperand = '';
+    totalObject.secondOperand = '';
+    console.table(totalObject);
+        
+    }
+
+    // Multiplication Code
+
+        
+    if (totalObject.operator == 'multiply') {
+        if (totalObject.secondOperand == '') {
+            totalObject.secondOperand = Number(calculatorWindow.value);
+        }
+
+    totalObject.total = totalObject.firstOperand * totalObject.secondOperand;
+    calculatorWindow.value = totalObject.total;
+    totalObject.operator = '';
+    totalObject.firstOperand = '';
+    totalObject.secondOperand = '';
+    console.table(totalObject);
+        
+    }
+
+
+    // Division Code
+
+    if (totalObject.operator == 'divide') {
+        if (totalObject.secondOperand == '') {
+            totalObject.secondOperand = Number(calculatorWindow.value);
+        }
+
+    totalObject.total = totalObject.firstOperand / totalObject.secondOperand;
+    calculatorWindow.value = totalObject.total;
+    totalObject.operator = '';
+    totalObject.firstOperand = '';
+    totalObject.secondOperand = '';
+    console.table(totalObject);
+        
+    }
+
+
+
+
 }
 
 
-
+// Addition Function Here
 add.addEventListener('pointerdown' , function additionFunction() {
     totalObject.operator = 'plus';
 
     if (calculatorWindow.value === '') {
         console.log('empty')
+        return '';
     }
 
-    if (firstOperand === '') {
-        total = Number(calculatorWindow.value);
-        // console.log(this.innerHTML)
+    if (totalObject.firstOperand === '') {
+        totalObject.firstOperand = Number(calculatorWindow.value);
         clearScreen();
 
     }
 
-     else if (secondOperand === '' && firstOperand !== '') {
-        secondOperand = Number(calculatorWindow.value);
+    if (totalObject.firstOperand != '' && totalObject.secondOperand == '') {
+        totalObject.secondOperand = Number( calculatorWindow.value);
         clearScreen();
     }
 
-
-
-    // if (totalObject.firstOperand !== '' && totalObject.secondOperand !== '') {
-    //     totalObject.total = totalObject.firstOperand + totalObject.secondOperand;
-    //     totalObject.firstOperand = totalObject.total;
-    //     totalObject.secondOperand = '';
-    //     calculatorWindow.value = totalObject.total;        
-    // }
-
-
-    
+    if (totalObject.firstOperand != '' && totalObject.secondOperand != '') {
+        equalFunction()
+    }
     console.table(totalObject);
 });
+
+// End of Addition Function
+
+
+// Subtraction Function Here
+
+subtract.addEventListener('pointerdown', subtractFunction);
+
+function subtractFunction() {
+    totalObject.operator = 'subtract';
+
+    if (calculatorWindow.value === '') {
+        console.log('empty')
+        return '';
+    };
+
+
+    if (totalObject.firstOperand === '') {
+        totalObject.firstOperand = Number(calculatorWindow.value);
+        clearScreen();
+    };
+
+
+    if (totalObject.firstOperand != '' && totalObject.secondOperand == '') {
+        totalObject.secondOperand = Number( calculatorWindow.value);
+        clearScreen();
+    };
+
+    
+    if (totalObject.firstOperand != '' && totalObject.secondOperand != '') {
+        equalFunction();
+    }
+
+    console.table(totalObject);
+}
+
+// End of Subtraction Function
+
+// Multiplication Function Here
+multiply.addEventListener('pointerdown', multiplyFunction);
+
+function multiplyFunction() {
+    totalObject.operator = 'multiply';
+
+    if (calculatorWindow.value === '') {
+        console.log('empty')
+        return '';
+    };
+
+
+    if (totalObject.firstOperand === '') {
+        totalObject.firstOperand = Number(calculatorWindow.value);
+        clearScreen();
+    };
+
+
+    if (totalObject.firstOperand != '' && totalObject.secondOperand == '') {
+        totalObject.secondOperand = Number( calculatorWindow.value);
+        clearScreen();
+    };
+
+    
+    if (totalObject.firstOperand != '' && totalObject.secondOperand != '') {
+        equalFunction();
+    }
+
+    console.table(totalObject);
+}
+
+// End of Multiplication Function
+
+// Division Function Here
+divide.addEventListener('pointerdown', divisionFunction);
+
+function divisionFunction() {
+    totalObject.operator = 'divide';
+
+    if (calculatorWindow.value === '') {
+        console.log('empty')
+        return '';
+    };
+
+
+    if (totalObject.firstOperand === '') {
+        totalObject.firstOperand = Number(calculatorWindow.value);
+        clearScreen();
+    };
+
+
+    if (totalObject.firstOperand != '' && totalObject.secondOperand == '') {
+        totalObject.secondOperand = Number( calculatorWindow.value);
+        clearScreen();
+    };
+
+    
+    if (totalObject.firstOperand != '' && totalObject.secondOperand != '') {
+        equalFunction();
+    }
+
+    console.table(totalObject);
+}
+
