@@ -33,10 +33,9 @@ let allButtons = document.querySelectorAll('.button-17');
 
 for (let index = 0; index < allButtons.length; index++) {
     const element = allButtons[index];
-    element.addEventListener('pointerdown', addtoScreen) 
+    element.addEventListener('mousedown', addtoScreen) 
 
         function addtoScreen() {
-            preventDefault();
 
             calculatorWindow.value = calculatorWindow.value + element.innerHTML
             // console.log(this.innerHTML)
@@ -46,10 +45,9 @@ for (let index = 0; index < allButtons.length; index++) {
 // Clear Window Event Listener and Function
 let calculatorWindow = document.getElementById('numbers-here')
 
-clear.addEventListener('pointerdown', clearAll);
+clear.addEventListener('mousedown', clearAll);
 
 function clearAll() {
-    preventDefault();
 
     calculatorWindow.value = '';
     totalObject.firstOperand = '';
@@ -61,7 +59,6 @@ function clearAll() {
 }
 
 function clearScreen() {
-    preventDefault();
 
     calculatorWindow.value = '';
 
@@ -71,10 +68,9 @@ function clearScreen() {
 
 // EventListeners and Funcitons for Operators
 
-equal.addEventListener('pointerdown', equalFunction);
+equal.addEventListener('mousedown', equalFunction);
 
 function equalFunction() {
-    preventDefault();
     if (totalObject.operator == 'plus') {
         if (totalObject.secondOperand == '') {
             totalObject.secondOperand = Number(calculatorWindow.value);
@@ -144,8 +140,7 @@ function equalFunction() {
 
 
 // Addition Function Here
-add.addEventListener('pointerdown' , function additionFunction() {
-    preventDefault();
+add.addEventListener('mousedown' , function additionFunction() {
 
     totalObject.operator = 'plus';
 
@@ -176,10 +171,9 @@ add.addEventListener('pointerdown' , function additionFunction() {
 
 // Subtraction Function Here
 
-subtract.addEventListener('pointerdown', subtractFunction);
+subtract.addEventListener('mousedown', subtractFunction);
 
 function subtractFunction() {
-    preventDefault();
 
     totalObject.operator = 'subtract';
 
@@ -211,10 +205,9 @@ function subtractFunction() {
 // End of Subtraction Function
 
 // Multiplication Function Here
-multiply.addEventListener('pointerdown', multiplyFunction);
+multiply.addEventListener('mousedown', multiplyFunction);
 
 function multiplyFunction() {
-    preventDefault();
 
     totalObject.operator = 'multiply';
 
@@ -246,10 +239,9 @@ function multiplyFunction() {
 // End of Multiplication Function
 
 // Division Function Here
-divide.addEventListener('pointerdown', divisionFunction);
+divide.addEventListener('mousedown', divisionFunction);
 
 function divisionFunction() {
-    preventDefault();
 
     totalObject.operator = 'divide';
 
