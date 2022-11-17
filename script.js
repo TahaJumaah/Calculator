@@ -34,7 +34,7 @@ let allButtons = document.querySelectorAll('.button-17');
 
 for (let index = 0; index < allButtons.length; index++) {
     const element = allButtons[index];
-    element.addEventListener('click', addtoScreen) 
+    element.addEventListener('pointerdown', addtoScreen) 
 
         function addtoScreen() {
 
@@ -49,7 +49,7 @@ for (let index = 0; index < allButtons.length; index++) {
 // Clear Window Event Listener and Function
 let calculatorWindow = document.getElementById('numbers-here')
 
-clear.addEventListener('click', clearAll);
+clear.addEventListener('pointerdown', clearAll);
 
 function clearAll() {
     dot.disabled = false;
@@ -72,7 +72,7 @@ function clearScreen() {
 
 // EventListeners and Funcitons for Operators
 
-equal.addEventListener('click', equalFunction);
+equal.addEventListener('pointerdown', equalFunction);
 
 function equalFunction() {
     if (totalObject.operator == 'plus') {
@@ -144,7 +144,7 @@ function equalFunction() {
 
 
 // Addition Function Here
-add.addEventListener('click' , function additionFunction() {
+add.addEventListener('pointerdown' , function additionFunction() {
 
     totalObject.operator = 'plus';
 
@@ -175,7 +175,7 @@ add.addEventListener('click' , function additionFunction() {
 
 // Subtraction Function Here
 
-subtract.addEventListener('click', subtractFunction);
+subtract.addEventListener('pointerdown', subtractFunction);
 
 function subtractFunction() {
 
@@ -209,7 +209,7 @@ function subtractFunction() {
 // End of Subtraction Function
 
 // Multiplication Function Here
-multiply.addEventListener('click', multiplyFunction);
+multiply.addEventListener('pointerdown', multiplyFunction);
 
 function multiplyFunction() {
 
@@ -243,7 +243,7 @@ function multiplyFunction() {
 // End of Multiplication Function
 
 // Division Function Here
-divide.addEventListener('click', divisionFunction);
+divide.addEventListener('pointerdown', divisionFunction);
 
 function divisionFunction() {
 
