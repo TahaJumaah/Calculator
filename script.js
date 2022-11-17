@@ -36,6 +36,8 @@ for (let index = 0; index < allButtons.length; index++) {
     element.addEventListener('pointerdown', addtoScreen) 
 
         function addtoScreen() {
+            preventDefault();
+
             calculatorWindow.value = calculatorWindow.value + element.innerHTML
             // console.log(this.innerHTML)
         }}
@@ -47,6 +49,8 @@ let calculatorWindow = document.getElementById('numbers-here')
 clear.addEventListener('pointerdown', clearAll);
 
 function clearAll() {
+    preventDefault();
+
     calculatorWindow.value = '';
     totalObject.firstOperand = '';
     totalObject.secondOperand = '';
@@ -57,6 +61,8 @@ function clearAll() {
 }
 
 function clearScreen() {
+    preventDefault();
+
     calculatorWindow.value = '';
 
     
@@ -68,6 +74,7 @@ function clearScreen() {
 equal.addEventListener('pointerdown', equalFunction);
 
 function equalFunction() {
+    preventDefault();
     if (totalObject.operator == 'plus') {
         if (totalObject.secondOperand == '') {
             totalObject.secondOperand = Number(calculatorWindow.value);
@@ -138,6 +145,8 @@ function equalFunction() {
 
 // Addition Function Here
 add.addEventListener('pointerdown' , function additionFunction() {
+    preventDefault();
+
     totalObject.operator = 'plus';
 
     if (calculatorWindow.value === '') {
@@ -170,6 +179,8 @@ add.addEventListener('pointerdown' , function additionFunction() {
 subtract.addEventListener('pointerdown', subtractFunction);
 
 function subtractFunction() {
+    preventDefault();
+
     totalObject.operator = 'subtract';
 
     if (calculatorWindow.value === '') {
@@ -203,6 +214,8 @@ function subtractFunction() {
 multiply.addEventListener('pointerdown', multiplyFunction);
 
 function multiplyFunction() {
+    preventDefault();
+
     totalObject.operator = 'multiply';
 
     if (calculatorWindow.value === '') {
@@ -236,6 +249,8 @@ function multiplyFunction() {
 divide.addEventListener('pointerdown', divisionFunction);
 
 function divisionFunction() {
+    preventDefault();
+
     totalObject.operator = 'divide';
 
     if (calculatorWindow.value === '') {
