@@ -22,6 +22,7 @@ let divide = document.getElementById('divide');
 let add = document.getElementById('add');
 let subtract = document.getElementById('subtract');
 let equal = document.getElementById('equal');
+let dot = document.getElementById('dot');
 
 
 // End of Button Assignment
@@ -38,6 +39,9 @@ for (let index = 0; index < allButtons.length; index++) {
         function addtoScreen() {
 
             calculatorWindow.value = calculatorWindow.value + element.innerHTML
+            if (calculatorWindow.value.includes('.') == true) {
+                dot.disabled = true;                
+            }
             // console.log(this.innerHTML)
         }}
 
@@ -48,7 +52,7 @@ let calculatorWindow = document.getElementById('numbers-here')
 clear.addEventListener('click', clearAll);
 
 function clearAll() {
-
+    dot.disabled = false;
     calculatorWindow.value = '';
     totalObject.firstOperand = '';
     totalObject.secondOperand = '';
