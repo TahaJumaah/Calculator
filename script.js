@@ -37,7 +37,7 @@ for (let index = 0; index < allButtons.length; index++) {
     element.addEventListener('pointerdown', addtoScreen) 
 
         function addtoScreen() {
-
+            pressure = 1.0;
             calculatorWindow.value = calculatorWindow.value + element.innerHTML
             if (calculatorWindow.value.includes('.') == true) {
                 dot.disabled = true;                
@@ -52,6 +52,7 @@ let calculatorWindow = document.getElementById('numbers-here')
 clear.addEventListener('pointerdown', clearAll);
 
 function clearAll() {
+    pressure = 1.0;
     dot.disabled = false;
     calculatorWindow.value = '';
     totalObject.firstOperand = '';
@@ -63,6 +64,7 @@ function clearAll() {
 }
 
 function clearScreen() {
+    pressure = 1.0;
 
     calculatorWindow.value = '';
 
@@ -75,6 +77,8 @@ function clearScreen() {
 equal.addEventListener('pointerdown', equalFunction);
 
 function equalFunction() {
+    pressure = 1.0;
+
     if (totalObject.operator == 'plus') {
         if (totalObject.secondOperand == '') {
             totalObject.secondOperand = Number(calculatorWindow.value);
@@ -145,6 +149,7 @@ function equalFunction() {
 
 // Addition Function Here
 add.addEventListener('pointerdown' , function additionFunction() {
+    pressure = 1.0;
 
     totalObject.operator = 'plus';
 
@@ -178,6 +183,7 @@ add.addEventListener('pointerdown' , function additionFunction() {
 subtract.addEventListener('pointerdown', subtractFunction);
 
 function subtractFunction() {
+    pressure = 1.0;
 
     totalObject.operator = 'subtract';
 
@@ -212,6 +218,7 @@ function subtractFunction() {
 multiply.addEventListener('pointerdown', multiplyFunction);
 
 function multiplyFunction() {
+    pressure = 1.0;
 
     totalObject.operator = 'multiply';
 
@@ -246,6 +253,7 @@ function multiplyFunction() {
 divide.addEventListener('pointerdown', divisionFunction);
 
 function divisionFunction() {
+    pressure = 1.0;
 
     totalObject.operator = 'divide';
 
