@@ -34,7 +34,7 @@ let allButtons = document.querySelectorAll('.button-17');
 
 for (let index = 0; index < allButtons.length; index++) {
     const element = allButtons[index];
-    element.addEventListener('pointerdown', addtoScreen) 
+    element.addEventListener('touchstart', addtoScreen) 
 
         function addtoScreen() {
             pressure = 1.0;
@@ -49,7 +49,7 @@ for (let index = 0; index < allButtons.length; index++) {
 // Clear Window Event Listener and Function
 let calculatorWindow = document.getElementById('numbers-here')
 
-clear.addEventListener('pointerdown', clearAll);
+clear.addEventListener('touchstart', clearAll);
 
 function clearAll() {
     pressure = 1.0;
@@ -74,7 +74,7 @@ function clearScreen() {
 
 // EventListeners and Funcitons for Operators
 
-equal.addEventListener('pointerdown', equalFunction);
+equal.addEventListener('touchstart', equalFunction);
 
 function equalFunction() {
     pressure = 1.0;
@@ -148,7 +148,7 @@ function equalFunction() {
 
 
 // Addition Function Here
-add.addEventListener('pointerdown' , function additionFunction() {
+add.addEventListener('touchstart' , function additionFunction() {
     pressure = 1.0;
 
     totalObject.operator = 'plus';
@@ -180,7 +180,7 @@ add.addEventListener('pointerdown' , function additionFunction() {
 
 // Subtraction Function Here
 
-subtract.addEventListener('pointerdown', subtractFunction);
+subtract.addEventListener('touchstart', subtractFunction);
 
 function subtractFunction() {
     pressure = 1.0;
@@ -215,7 +215,7 @@ function subtractFunction() {
 // End of Subtraction Function
 
 // Multiplication Function Here
-multiply.addEventListener('pointerdown', multiplyFunction);
+multiply.addEventListener('touchstart', multiplyFunction);
 
 function multiplyFunction() {
     pressure = 1.0;
@@ -250,7 +250,7 @@ function multiplyFunction() {
 // End of Multiplication Function
 
 // Division Function Here
-divide.addEventListener('pointerdown', divisionFunction);
+divide.addEventListener('touchstart', divisionFunction);
 
 function divisionFunction() {
     pressure = 1.0;
